@@ -1,0 +1,18 @@
+<div style="height: 100%; background-color: rgba(149, 17, 186, 0.61);">
+    <p>
+        Simplified user journey, making it easier to list and purchase items:
+    </p>
+    <p-timeline [value]="events" align="alternate">
+        <ng-template pTemplate="content" let-event>
+            {{event.step}}
+        </ng-template>
+    </p-timeline>
+</div>
+
+<style>
+    p{
+        color: azure;
+        font-weight: 700;
+        font-size: 30px;
+    }
+</style>

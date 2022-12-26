@@ -1,0 +1,30 @@
+<p-toolbar>
+  <div class="p-toolbar-group-left toolbar">
+      <span>
+          <h2>liveStore</h2>
+      </span>        
+  </div>
+  <div class="p-toolbar-group-right">
+      <p-button label="Connect Metamask" (click)="connectWallet()" *ngIf="!isWallet">
+        <i class="pi pi-wallet"></i>&nbsp;
+      </p-button>
+      <div *ngIf="isWallet">
+        <p-button label="Go to Store" (click)="goToStore()">
+          <i class="pi pi-wallet"></i>&nbsp;
+        </p-button>
+      </div>
+      <div class="spacer"></div>
+      <div *ngIf="isWallet">
+        <p-chip label="{{toolbarLabel}}" icon="pi pi-user" pTooltip="{{connectedWallet}}" tooltipPosition="bottom"></p-chip>
+      </div>
+  </div>
+</p-toolbar>
+<p-toast position="top-left"></p-toast>
+<p-confirmDialog [closable]="false"></p-confirmDialog>
+<router-outlet></router-outlet>
+
+<style>
+  .spacer{
+    width: 10px;
+  }
+</style>

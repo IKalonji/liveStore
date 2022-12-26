@@ -1,0 +1,34 @@
+<div>
+    <div style="text-align: center;">
+        <h2>
+            My Profile
+        </h2>
+    </div>
+    <div style="text-align: center;">
+        <p-avatar icon="pi pi-user" size="xlarge" pBadge severity="danger" value="{{currentMessages}}"></p-avatar>
+        <div class="horizontal-spacer"></div>
+
+        <p-fieldset legend="{{header}}">
+            <p-tabView>
+                <p-tabPanel leftIcon="pi pi-envelope" header="Inbox">
+                    <app-my-messages></app-my-messages>
+                </p-tabPanel>
+                <p-tabPanel leftIcon="pi pi-bell" header="Notifications">
+                    <app-notifications></app-notifications>
+                </p-tabPanel>
+                <p-tabPanel leftIcon="pi pi-list" header="Listings">
+                    <app-listings></app-listings>
+                </p-tabPanel>
+                <p-tabPanel leftIcon="pi pi-shopping-bag" header="Purchases">
+                    <app-purchases></app-purchases>
+                </p-tabPanel>
+            </p-tabView>
+        </p-fieldset>
+    </div>
+</div>
+
+<style>
+    .horizontal-spacer{
+        height: 15px;
+    }
+</style>
