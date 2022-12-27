@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { BannerComponent } from './store-front/banner/banner.component';
 import { ProductCardComponent } from './store-front/product-card/product-card.component';
 import { AddListingComponent } from './profile-page/add-listing/add-listing.component';
 import { MyMessagesComponent } from './profile-page/my-messages/my-messages.component';
+import { NotificationsComponent } from './profile-page/notifications/notifications.component';
+import { ListingsComponent } from './profile-page/listings/listings.component';
+import { PurchasesComponent } from './profile-page/purchases/purchases.component';
 
 import {CardModule} from 'primeng/card';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -45,9 +49,8 @@ import { ChipModule } from 'primeng/chip';
 import {FieldsetModule} from 'primeng/fieldset';
 import {AvatarModule} from 'primeng/avatar';
 import {TooltipModule} from 'primeng/tooltip';
-import { NotificationsComponent } from './profile-page/notifications/notifications.component';
-import { ListingsComponent } from './profile-page/listings/listings.component';
-import { PurchasesComponent } from './profile-page/purchases/purchases.component';
+import {AccordionModule} from 'primeng/accordion';
+import { ReputationComponent } from './profile-page/reputation/reputation.component';
 
 
 
@@ -67,7 +70,8 @@ import { PurchasesComponent } from './profile-page/purchases/purchases.component
     MyMessagesComponent,
     NotificationsComponent,
     ListingsComponent,
-    PurchasesComponent
+    PurchasesComponent,
+    ReputationComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +105,9 @@ import { PurchasesComponent } from './profile-page/purchases/purchases.component
     ChipModule,
     FieldsetModule,
     AvatarModule,
-    TooltipModule
+    TooltipModule,
+    AccordionModule,
+    HttpClientModule
   ],
   providers: [
     ConfirmationService,

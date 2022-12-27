@@ -1,1 +1,9 @@
-<p>my-messages works!</p>
+<div *ngIf="myMessages.length == 0">
+    You have no direct messages
+</div>
+<p-accordion>
+    <p-accordionTab *ngFor="let msg of myMessages">
+        <ng-template pTemplate="header">From: {{msg.from}}</ng-template>
+        <ng-template pTemplate="content">{{msg.message}}</ng-template>
+    </p-accordionTab>
+</p-accordion>

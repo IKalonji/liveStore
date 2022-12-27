@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XmtpService } from 'src/app/services/messaging/xmtp.service';
 
 @Component({
   selector: 'app-my-messages',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyMessagesComponent implements OnInit {
 
-  constructor() { }
+  myMessages: Messages[] = [];
+
+  constructor(private xmtpService: XmtpService) { }
 
   ngOnInit(): void {
+    this.getMessages()
   }
 
+  getMessages(){
+    // const messages = this.xmtpService.getConversationMessages();
+  }
+
+}
+
+export interface Messages{
+  from: string,
+  message: any
 }

@@ -1,1 +1,9 @@
-<p>notifications works!</p>
+<div *ngIf="notifications.length == 0">
+    You have no notifications
+</div>
+<p-accordion>
+    <p-accordionTab *ngFor="let msg of notifications">
+        <ng-template pTemplate="header">From: {{msg.from}}</ng-template>
+        <ng-template pTemplate="content">{{msg.message}}</ng-template>
+    </p-accordionTab>
+</p-accordion>
